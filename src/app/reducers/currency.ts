@@ -1,10 +1,10 @@
-import * as amount from './../actions/amount-change';
-import { AmountChangeAction } from './../actions/amount-change';
+import * as currency from './../actions/currencies-updated';
+import { CurrenciesUpdatedAction } from '../actions/currencies-updated';
 
-function reducer(state: number = 1, action: AmountChangeAction) {
+function reducer(state = [], action: CurrenciesUpdatedAction) {
   switch (action.type) {
-    case amount.AMOUNTCHANGE:
-      return action.paylod;
+    case currency.CURRENCIESUPDATED:
+      return action.payload;
     default:
       return state;
   }
