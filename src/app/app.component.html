@@ -1,14 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <h1>Welcome to {{ title }}!</h1>
   <form [formGroup]="currencyFormGroup" (ngSubmit)="dispatchAmount()">
     <label>
       Amount:
-      <input type="text" formControlName="formControlAmount" [placeholder]="placeHolderAmount">
+      <input
+        type="text"
+        formControlName="formControlAmount"
+        [placeholder]="placeHolderAmount"
+      />
     </label>
     <button type="submit">Submit</button>
   </form>
-
+  <div>
+    <span>Amount From Store: {{ amount$ | async }} </span>
+  </div>
+  <h2>Currency Rates From Store:</h2>
+  <p *ngFor="let currency of currencyRates$ | async">
+    {{ currency.code + " " + currency.value * (amount$ | async) }}
+  </p>
   <router-outlet></router-outlet>
+</div>
