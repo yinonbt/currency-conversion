@@ -7,7 +7,7 @@ export const reducers = {
   currencies: fromCurrency.reducer
 };
 
-interface State {
+export interface State {
   amount: number;
   currencies: Currency[];
 }
