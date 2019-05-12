@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { reducers } from './reducers/index';
 import { StoreModule } from '@ngrx/store';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { CurrencyEffects } from './effects/currency-effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule, ReactiveFormsModule,
-    StoreModule.forRoot(reducers) // import store with a map of reducers
+    HttpClientModule,
+    StoreModule.forRoot(reducers), // import store with a map of reducers
+    EffectsModule.forRoot([CurrencyEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
