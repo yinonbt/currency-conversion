@@ -1,6 +1,6 @@
 import * as fromAmount from './amount';
 import * as fromCurrency from './currency';
-import * as fromSelectors from '../selectors/selectors'
+import * as fromSelectors from '../selectors/selectors';
 import { Currency } from '../models/currency';
 
 export const reducers = {
@@ -16,4 +16,4 @@ export interface State {
 export const selectors = {
   getAmountState: fromSelectors.getAmountState,
   getCurrnecyRates: fromSelectors.getCurrnecyRates
-}
+};
